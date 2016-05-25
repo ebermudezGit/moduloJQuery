@@ -1,19 +1,236 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>JQuery Practice</title>
+	<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+<h1>JQuery</h1>
+<p>
+	jQuery es una biblioteca de JavaScript, creada inicialmente por John Resig, que permite simplificar la manera de interactuar con los documentos HTML, manipular el árbol DOM, manejar eventos, desarrollar animaciones y agregar interacción con la técnica AJAX a páginas web. Fue presentada el 14 de enero de 2006 en el BarCamp NYC. jQuery es la biblioteca de JavaScript más utilizada.
+</p>
 
-<a href="">hola</a>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque officiis, eveniet magnam odit, omnis deserunt reiciendis. Repellendus debitis, dicta sunt deserunt? Qui, incidunt a sapiente amet cupiditate, libero magnam possimus.</p>
+<p>
+	jQuery es software libre y de código abierto, posee un doble licenciamiento bajo la Licencia MIT y la Licencia Pública General de GNU v2, permitiendo su uso en proyectos libres y privados.2 jQuery, al igual que otras bibliotecas, ofrece una serie de funcionalidades basadas en JavaScript que de otra manera requerirían de mucho más código, es decir, con las funciones propias de esta biblioteca se logran grandes resultados en menos tiempo y espacio.
+</p>
 
+<p>
+	Las empresas Microsoft y Nokia anunciaron que incluirán la biblioteca en sus plataformas.3 Microsoft la añadirá en su IDE Visual Studio4 y la usará junto con los frameworks ASP.NET AJAX y ASP.NET MVC, mientras que Nokia los integrará con su plataforma Web Run-Time.
+</p>
+
+<h2>Vamos directo al grano</h2>
+
+<h3>¿jQuery o 1?</h3>
+<p>
+	Al trabajar con la libreria jQuery podemos iniciar la llamada con la palabra jQuery o con el signo $
+</p>
+
+<p>
+	Esto se debe a que el signo peso 1 se define como una variable global que tiene como valor: jQuery Por lo que jQuery y el signo $ son sinónimos.
+</p>
+<pre>
+	// Esto
+	jQuery('.element')...
+
+	// Es igual a esto
+	$('.element')...
+</pre>
+
+<h3>SELECTORES</h3>
+
+<p>
+	Los selectores de jQuery permiten seleccionar y manipular elemento (s) de HTML.  se utilizan para encontrar (o seleccionar) elementos HTML en función del ID, clases, tipos, atributos, valores de atributos y mucho más. Está basado en los selectores CSS existentes y, además, tiene algunos selectores personalizados propios. 
+</p>
+<pre>
+	$('div')...
+	$('.page-menu')...
+	$('#main-content')...
+	$('.intro, .demo')...
+	$('h1, p, span')...
+	$('div > p')...
+	$('div p')...
+	$(':input')...
+	$('[href]')...
+	$('p:hidden')...
+	$('p:first-child')...
+	$('div::has(p)').
+</pre>
+
+
+
+
+<a class="class_a1">hola</a>
+<p id="Lorem">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque officiis, eveniet magnam odit, omnis deserunt reiciendis. Repellendus debitis, dicta sunt deserunt? Qui, incidunt a sapiente amet cupiditate, libero magnam possimus.</p>
+<button id="Button">click JQuery</button>
+
+
+<h4>Atributos href</h4>
+<p>
+	Usando el selector con atributos
+</p>
+<pre>
+	//Atrr Atributo href
+	$("#a2").click(onClickhref);
+	function onClickhref(){
+		$("[href]='#'").attr('href', 'http://empieza.desafiolatam.com/');
+	}	
+</pre>
+<p>Probar Ejemplo</p>
+<a href="#" id="a2" class="class_a" >Soy un a</a>
+
+<h4>Agregar y Quitar Clases de CSS</h4>
+<p>
+	agregar y quitar una clase a un elemento
+</p>
+<pre>
+	//Agregar y Quitar Clases de CSS
+	var addelem1 = $("#addelem1");
+	var delelem1 = $("#delelem1");
+	var addelem2 = $("#addelem2");
+	var delelem2 = $("#delelem2");
+
+	addelem1.click(onClickAddelem1);
+	delelem1.click(onClickDelelem1);
+	addelem2.click(onClickAddelem2);
+	delelem2.click(onClickDelelem2);
+
+	function onClickAddelem1() {
+		$("#psinclass").addClass("elem1");
+	};
+	
+	function onClickDelelem1() {
+		$("#psinclass").removeClass("elem1");
+	};
+
+	function onClickAddelem2() {
+		$("#psinclass").addClass("elem2");
+	};
+	
+	function onClickDelelem2 () {
+		$("#psinclass").removeClass("elem2");
+	};
+</pre>
+<p>Probar Ejemplo</p>
+<p id="psinclass">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati repellendus, illo quod consectetur ea vitae tempora, nisi molestiae ad, non deserunt, magni quam amet? Dolores maiores esse, eius libero alias!</p>
+<a id="addelem1">Agregar Clase elem1</a>
+<a id="delelem1">Quitar Clase elem1</a>
+<a id="addelem2">Agregar Clase elem2</a>
+<a id="delelem2">Quitar Clase elem2</a>
+
+<h4>text</h4>
+<p>Modificaremos el texto de un elemento en este caso el siguiente parrafo.</p>
+<pre>
+	//Text
+	$(document).ready(init);
+	
+	function init(){
+		$("#parrafo1").click(changeText);
+	}
+
+	function changeText () {
+		 $(this).text("Cambiamos el Texto mediante JQuery.");
+		 //leer el texto en el Elemento
+		 console.log($('#parrafo1').text());
+	}
+</pre>
+
+<p id="parrafo1">
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi excepturi odit, hic iusto! Praesentium vitae nemo quia sunt voluptate veritatis, consectetur iste. Nihil, quaerat reiciendis fugiat repellat tenetur illo cupiditate?
+</p>
+<p>Probar Ejemplo dando click en el parrafo de arriba.</p>
+<p>
+	Tambien podemos leer el texto con el metodo text de la siguinete forma
+</p>
+<pre>
+	console.log($('#parrafo1').text());
+</pre>
+<p>
+	En esta linea leemos el texto del parrafo y lo escribimos en la consola.
+</p>
+
+
+<h4>append</h4>
+<p>
+	Adicionar contenido a un elemneto es posible mediante el metodo append. Append concatena el contenido al ya existen. mientras que after y before agrega contenido antes y despues del elemento respectivamente.
+</p>
+
+<pre>
+	//append,after,before
+	$("#Button002").click(contentAdd);
+	function contentAdd () {
+		 $("#contenido01").append('Soy un append');
+	}
+	$("#Button003").click(contentAft);
+	function contentAft () {
+		 $("#contenido01").after('Soy un after');
+	}
+	$("#Button004").click(contentBef);
+	function contentBef () {
+		 $("#contenido01").before('Soy un before');
+	}
+</pre>
+<div class="resaltarconhijo">
+<p class="resaltar" id="contenido01">
+	Mi contenido de este parrafo.
+</p>
+</div>
+<button id="Button002">Prueba append</button>
+<button id="Button003">Prueba after</button>
+<button id="Button004">Prueba before</button>
+
+
+<h4>Mouseover y Mouseout</h4>
+<p>
+	Vamos a ver estos 2 metodos para eventos del raton.
+</p>
+<pre>
+	//mouseover,mouseout
+	$("#Parrafor0002").mouseover(makeOver);
+	function makeOver() {
+		 $(this).css("background-color","yellow");
+	}
+
+	$("#Parrafor0002").mouseout(makeOutOver);
+	function makeOutOver() {
+		 $(this).css("background-color","peru");
+	}
+</pre>
+<p id="Parrafor0002">Parrafo Principal</p>
+
+<h4>Mousemove</h4>
+<p>Este es un metodo para el evento del mouse.</p>
+<pre>
+	//mousemove
+	$(document).mousemove(locationCursor);
+	function locationCursor(){
+		$("#positionmousemove").text("Location for x in Mouse: "+ event.clientX + " location for y in Mouse: " + event.clientY);
+	}
+</pre>
+
+<p class="resaltar" id="positionmousemove"></p>
+
+<h4>Mousedown y mouseup</h4>
+<p>
+	Vamos a ver estos 2 metodos para eventos del raton.
+</p>
+<pre>
+	//mousedown y mouseup
+	$("#Parrafor0003").mousedown(makeDown);
+	function makeDown(){
+		$("#pressmousedownup").text("Tu presionaste el boton");
+	}
+	$("#Parrafor0003").mouseup(makeUp);
+	function makeUp(){
+		$("#pressmousedownup").text("Tu soltaste el boton");
+	}
+</pre>
+<p id="Parrafor0003">Mueve el mouse aqui y da click</p>
+<p id="pressmousedownup"></p>
 <!-- jQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-
 <!-- scripts concatenated and minified -->
-<!--<script src="js/ho.js"></script>-->
+<script src="js/ho.js"></script>
 <script src="js/main.js"></script>
 <!-- end concatenated and minified scripts-->
 </body>

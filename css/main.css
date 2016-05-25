@@ -1,0 +1,24 @@
+.elem1{
+	background-color: peru;
+	font-size: 3rem;
+	color: black;
+	border-radius: 30px;
+}
+
+.elem2{
+	background-color: green;
+	font-size: 3rem;
+	color: white;
+	border-radius: 0px;
+}
+
+.resaltar{
+	border: 1px solid lime;
+	margin: 10px 0;
+}
+
+.resaltarconhijo{
+	border: 1px solid lime;
+	margin: 10px 0;
+	padding: 10px 5px;
+}
