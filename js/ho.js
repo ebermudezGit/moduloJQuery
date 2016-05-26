@@ -101,5 +101,66 @@ $(document).ready(function() {
 		$("#pressmousedownup").text("Tu soltaste el boton");
 	}
 	
+	//dblclick
+	$("#Parrafor0004").dblclick(doubleClick);
+	function doubleClick(){
+		$("#dblclick").text("Doble click listo");
+	}
+
+	//keypress
+	$(document).keypress(keyPressed);
+	function keyPressed(e){
+		$("#keypress").text("Key pressed! and the code is: " + e.keycode);
+	}
+
+	//Animation
+	$("#showContent").click(showContent);
+	function showContent() {
+		//$("#Parrafor0005").show();
+		//$("#Parrafor0005").show("slow");
+		//$("#Parrafor0005").show(2000);
+
+		//velocidad y transparencia
+		//$("#Parrafor0005").fadeTo(2000,1);
+
+		//$("#Parrafor0005").slideDown(2000);
+
+		//El elemento debe ser visible
+		//$("#Parrafor0005").animate({height:300},2000);
+
+	}
+	$("#hidenContent").click(hidenContent);
+	function hidenContent() {
+		//$("#Parrafor0005").hide();
+		//$("#Parrafor0005").hide("fast");
+		//$("#Parrafor0005").hide(2000);
+
+		//velocidad y transparencia
+		//$("#Parrafor0005").fadeTo(2000,0.4);
+
+		//$("#Parrafor0005").slideUp(2000);
+		//$("#Parrafor0005").animate({height:300,width:400},2000);
+
+	}
+	//toggle
+	$("#toggleContent").click(toggleContent);
+	function toggleContent() {
+		$("#Parrafor0005").toggle(2000);
+		//$("#Parrafor0005").slideToggle(2000);
+	}
+
+	//callbackContent
+	$("#sincallbackContent").click(sincallbackContent);
+	function sincallbackContent(){
+		$("#Parrafor0005").toggle(2000);
+		callbackFunction();
+	}
+	$("#concallbackContent").click(concallbackContent);
+	function concallbackContent(){
+		$("#Parrafor0005").toggle(2000,callbackFunction);
+	}
+	function callbackFunction(){
+		alert("Animacion Terminada!!");
+	}
 
 });

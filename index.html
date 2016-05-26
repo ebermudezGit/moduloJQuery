@@ -227,6 +227,103 @@
 </pre>
 <p id="Parrafor0003">Mueve el mouse aqui y da click</p>
 <p id="pressmousedownup"></p>
+
+<h4>dblclick</h4>
+<p>
+	Vamos a ver 1 metodos para eventos del raton.
+</p>
+<pre>
+	//dblclick
+	$("#Parrafor0004").dblclick(doubleClick);
+	function doubleClick(){
+		$("#dblclick").text("Doble click listo");
+	}
+</pre>
+<p id="Parrafor0004">Doble click Aqui</p>
+<p class="resaltar" id="dblclick"></p>
+
+<h4>keypress</h4>
+<p>
+	Vamos a ver 1 metodo para eventos el teclado.
+</p>
+<pre>
+
+</pre>
+<p class="resaltar" id="keypress"></p>
+
+
+<h4>Animation</h4>
+<p>
+	Vamos a ver 1 metodo para eventos el teclado.
+</p>
+<pre>
+
+</pre>
+<div class="resaltar">
+<p id="Parrafor0005">
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam culpa quis omnis sapiente fugiat, quo voluptates aliquid, similique deserunt nam dolor cum, expedita assumenda voluptatem, sit iste. Ratione, dolorem. Perferendis!
+</p>
+</div>
+<div>
+	<input type="radio" name="animationradio" id="animationtimetrue" value="timer" checked> timer
+	<input type="number" min="0" max="100000000" step="1" value="0" id="animationtime">
+	<input type="radio" name="animationradio" id="animationfade" value="fade"> fade
+	<button id="showContent">Mostrar</button>
+	<button id="hidenContent">Ocultar</button>
+	<button id="toggleContent">toggle</button>
+	<button id="sincallbackContent">Sin Callback</button>
+	<button id="concallbackContent">Con Callback</button>
+</div>
+
+
+<h4>Ejercicio</h4>
+<a>https://jsfiddle.net/1fk5fyLc/7/</a>
+<section>
+	<form>
+	  <label name="first_name_label" for="firstname">First name:
+	  <br>
+	  <input type="text" id="firstname" name="firstname" value="Eli Bermudez">
+	  </label>
+	  <label name="last_name_label" for="lastname">Last name:
+	  <br>
+	  <input type="text" id="lastname" name="lastname">
+	  </label>
+	  <br>
+	  <input type="radio" name="sex" value="male" checked>Male
+	  <br>
+	  <input type="radio" name="sex" value="female">Female
+	  <br> Favorite day of the week:
+	  <br>
+	  <select name="fav_day">
+	    <option value="Saturday">Saturday</option>
+	    <option value="Sunday">Sunday</option>
+	    <option value="Monday">Monday</option>
+	    <option value="Tuesday">Tuesday</option>
+	    <option value="Wednesday">Wednesday</option>
+	    <option value="Thursday">Thursday</option>
+	    <option value="Friday" selected>Friday</option>
+	  </select>
+	  <br>
+	</form>
+
+	<br>
+	<br>
+
+	<form>
+	  What's your major:
+	  <br>
+	  <input type="text" name="major">
+	  <br> What's your job title:
+	  <br>
+	  <input type="text" name="job_title">
+	  <br> Do you like challenges:
+	  <br>
+	  <input type="radio" name="challenge" value="yes" checked>Yes
+	  <br>
+	  <input type="radio" name="challenge" value="no">No
+	</form>
+</section>
+
 <!-- jQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!-- scripts concatenated and minified -->
