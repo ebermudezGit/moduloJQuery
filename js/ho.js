@@ -163,4 +163,34 @@ $(document).ready(function() {
 		alert("Animacion Terminada!!");
 	}
 
+
+//Ejercicio N1
+	$("#Button007").click(makeExercise);
+	function makeExercise(){
+	// 1. Pon tu nombre al atributo value del campo first name
+		$('input[name=firstname]').attr('value','Eli Bermudez');
+	// 2. Pon el valor a la pregunta Favorite Day of Week a Monday
+		$('option[value="Monday"]').attr('selected',"");
+	// 3. Cambia la etiqueta de First name a 'Tu nombre'
+		$('label[name=first_name_label]').text('Tu nombre:');
+	// 4. Obtén el valor del atributo 'name' del campo Favorite Day of The Week
+		console.log($('select').attr('name'));
+	// 5. Escoge la opción Female de la pregunta de género.
+		$('input[value=male]').removeAttr('checked');
+		$('input[value=female]').attr('checked',"");
+	// 6. Encuentra la primera form del documento y pon el atributo name = personal_info
+		$('form:first').attr('name','personal_info');
+	// 7. Encuentra la primera form del documento y pon el atributo name = job_info
+		$('form:first').attr('name','job_info');
+	// 8. Agrega un título h1 a cada una de las formas que diga 'Entrevista personal', 'Entrevista de trabajo' respectivamente
+			$('form:first label:first-child').before('<h5>Entrevista personal</h5>');
+			$('form:last *:first-child').before('<h5>Entrevista de trabajo</h5>');
+	// 9. Agrega un título a la pregunta Male/Female 'Gender'
+		$('input[value=male]').before('<h6>Gender</h6>');
+	// 10. Agrega una pregunta Email: con un input de tipo texto después de last name
+		$('input[name=lastname]').after('<br><label name="e_mail" for="email">Email:</label><input type="email" id="email" name="email">');
+	// 11. Agrega la clase form a ambas formas
+		$('form').addClass('class','form');
+	}	
+
 });

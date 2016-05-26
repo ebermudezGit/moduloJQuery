@@ -275,53 +275,90 @@
 	<button id="concallbackContent">Con Callback</button>
 </div>
 
+<section id="ejercicio_n1">
+<h4>EJERCICIO N 1</h4>
+<p>
+	Vamos a ver un ejercicio reto que se solicito en la clase.
+</p>
+<p>El ejercicio lo tomaremos de el siguinete link.</p>
 
-<h4>Ejercicio</h4>
-<a>https://jsfiddle.net/1fk5fyLc/7/</a>
-<section>
-	<form>
-	  <label name="first_name_label" for="firstname">First name:
-	  <br>
-	  <input type="text" id="firstname" name="firstname" value="Eli Bermudez">
-	  </label>
-	  <label name="last_name_label" for="lastname">Last name:
-	  <br>
-	  <input type="text" id="lastname" name="lastname">
-	  </label>
-	  <br>
-	  <input type="radio" name="sex" value="male" checked>Male
-	  <br>
-	  <input type="radio" name="sex" value="female">Female
-	  <br> Favorite day of the week:
-	  <br>
-	  <select name="fav_day">
-	    <option value="Saturday">Saturday</option>
-	    <option value="Sunday">Sunday</option>
-	    <option value="Monday">Monday</option>
-	    <option value="Tuesday">Tuesday</option>
-	    <option value="Wednesday">Wednesday</option>
-	    <option value="Thursday">Thursday</option>
-	    <option value="Friday" selected>Friday</option>
-	  </select>
-	  <br>
-	</form>
+<a href="https://jsfiddle.net/1fk5fyLc/7/">https://jsfiddle.net/1fk5fyLc/7/</a>
+<p>las respuestas son las siguientes:</p>
+<pre>
+	//Ejercicio N1
+	$("#Button007").click(makeExercise);
+	function makeExercise(){
+	// 1. Pon tu nombre al atributo value del campo first name
+		$('input[name=firstname]').attr('value','Eli Bermudez');
+	// 2. Pon el valor a la pregunta Favorite Day of Week a Monday
+		$('option[value="Monday"]').attr('selected',"");
+	// 3. Cambia la etiqueta de First name a 'Tu nombre'
+		$('label[name=first_name_label]').text('Tu nombre:');
+	// 4. Obtén el valor del atributo 'name' del campo Favorite Day of The Week
+		console.log($('select').attr('name'));
+	// 5. Escoge la opción Female de la pregunta de género.
+		$('input[value=male]').removeAttr('checked');
+		$('input[value=female]').attr('checked',"");
+	// 6. Encuentra la primera form del documento y pon el atributo name = personal_info
+		$('form:first').attr('name','personal_info');
+	// 7. Encuentra la primera form del documento y pon el atributo name = job_info
+		$('form:first').attr('name','job_info');
+	// 8. Agrega un título h1 a cada una de las formas que diga 'Entrevista personal', 'Entrevista de trabajo' respectivamente
+		$('form:first label:first-child').before('< h5>Entrevista personal</ h5>');
+		$('form:last *:first-child').before('< h5>Entrevista de trabajo</ h5>');
+	// 9. Agrega un título a la pregunta Male/Female 'Gender'
+		$('input[value=male]').before('< h6>Gender</ h6>');
+	// 10. Agrega una pregunta Email: con un input de tipo texto después de last name
+		$('input[name=lastname]').after('< br>< label name="e_mail" for="email">Email:</ label>< input type="text" id="email" name="email">');
+	// 11. Agrega la clase form a ambas formas
+		$('form').addClass('class','form');
+	}
+</pre>
 
-	<br>
-	<br>
+<button id="Button007">Hacer el Ejercicio</button>
+<section class="resaltarconhijo">
+<form class="resaltar">
+  <label name="first_name_label" for="firstname">First name:</label>
+  <input type="text" id="firstname" name="firstname">
+  <br>
+  <label name="last_name_label" for="lastname">Last name:</label>
+  <input type="text" id="lastname" name="lastname">
+  <br>
+  <input type="radio" name="sex" value="male" checked>Male
+  <br>
+  <input type="radio" name="sex" value="female">Female
+  <br> Favorite day of the week:
+  <br>
+  <select name="fav_day">
+    <option value="Saturday">Saturday</option>
+    <option value="Sunday">Sunday</option>
+    <option value="Monday">Monday</option>
+    <option value="Tuesday">Tuesday</option>
+    <option value="Wednesday">Wednesday</option>
+    <option value="Thursday">Thursday</option>
+    <option value="Friday">Friday</option>
+  </select>
+  <br>
+</form>
 
-	<form>
-	  What's your major:
-	  <br>
-	  <input type="text" name="major">
-	  <br> What's your job title:
-	  <br>
-	  <input type="text" name="job_title">
-	  <br> Do you like challenges:
-	  <br>
-	  <input type="radio" name="challenge" value="yes" checked>Yes
-	  <br>
-	  <input type="radio" name="challenge" value="no">No
-	</form>
+<br>
+<br>
+
+<form  class="resaltar">
+  <br>
+  What's your major:
+  <br>
+  <input type="text" name="major">
+  <br> What's your job title:
+  <br>
+  <input type="text" name="job_title">
+  <br> Do you like challenges:
+  <br>
+  <input type="radio" name="challenge" value="yes" checked>Yes
+  <br>
+  <input type="radio" name="challenge" value="no">No
+</form>
+</section>
 </section>
 
 <!-- jQuery -->
